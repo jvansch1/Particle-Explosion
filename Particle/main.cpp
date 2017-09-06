@@ -43,9 +43,17 @@ int main() {
         return 1;
     }
     
+    Uint32 *buffer = new Uint32 [SCREEN_HEIGHT * SCREEN_WIDTH];
+    
+    memset(buffer, 0xff, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+    
     bool quit = false;
     SDL_Event event;
     
+    SDL_UpdateTexture(m_texture, NULL, buffer, SCREEN_WIDTH  * sizeof(Uint32));
+    SDL_RenderClear(m_renderer);
+    SDL_RenderCopy(m_renderer, m_texture, NULL, NULL);
+    SDL_RenderPresent(m_renderer);
     
     // main game loop. Will keep going until quit = true
     while(!quit) {
@@ -62,6 +70,7 @@ int main() {
         }
     }
     
+    delete [] buffer;
     SDL_DestroyTexture(m_texture);
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(window);
