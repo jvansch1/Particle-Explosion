@@ -12,25 +12,25 @@
 
 int main() {
     jvs::Screen screen = jvs::Screen();
-    screen.init();
-
     
+    if (screen.init() == false) {
+        std::cout << "Error initializing SDL";
+    }
+
     bool quit = false;
     SDL_Event event;
     
     
     // main game loop. Will keep going until quit = true
-    while(!quit) {
+    while(true) {
         // Update position or state of particles
         // Draw particles
         // check for messages/events
         
         // inside loop will look at all events
         // if loop is QUIT(pressing x on window) set quit to true
-        while (SDL_PollEvent(&event)) {
-            if(event.type == SDL_QUIT) {
-                quit = true;
-            }
+        if (!screen.processEvents()) {
+            break;
         }
     }
     screen.close();
