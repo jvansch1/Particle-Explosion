@@ -27,8 +27,21 @@ int main() {
         // Draw particles
         // check for messages/events
         
+        for(int y = 0; y < jvs::Screen::SCREEN_HEIGHT; y++) {
+            for (int x = 0; x < jvs::Screen::SCREEN_WIDTH; x++) {
+                if(x % 2 == 0) {
+                    screen.setPixel(x, y, 128, 0, 255);
+                }
+                
+            }
+        }
+        
         // inside loop will look at all events
         // if loop is QUIT(pressing x on window) set quit to true
+        
+
+        screen.update();
+        
         if (!screen.processEvents()) {
             break;
         }

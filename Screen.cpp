@@ -12,8 +12,16 @@
 
 namespace jvs {
     Screen::Screen(): m_window(NULL), m_renderer(NULL), m_texture(NULL), m_buffer(NULL) {
-
     }
+    
+    void Screen::update() {
+        SDL_UpdateTexture(m_texture, NULL, m_buffer, SCREEN_WIDTH  * sizeof(Uint32));
+        SDL_RenderClear(m_renderer);
+        SDL_RenderCopy(m_renderer, m_texture, NULL, NULL);
+        SDL_RenderPresent(m_renderer);
+    }
+    
+
     
     bool Screen::init() {
         
@@ -48,21 +56,14 @@ namespace jvs {
             return false;
         }
         
-        Uint32 *buffer = new Uint32 [SCREEN_HEIGHT * SCREEN_WIDTH];
+        m_buffer = new Uint32 [SCREEN_HEIGHT * SCREEN_WIDTH];
         
-        memset(buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
-        
-        //    each FF pair is setting a value
-        buffer[30000] = 0xFFFFFFFF;
-        
-        for (int i = 0; i < SCREEN_HEIGHT * SCREEN_WIDTH; i++) {
-            buffer[i] = 0x0080FFFF;
-        }
+        memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
         
         bool quit = false;
         SDL_Event event;
         
-        SDL_UpdateTexture(m_texture, NULL, buffer, SCREEN_WIDTH  * sizeof(Uint32));
+        SDL_UpdateTexture(m_texture, NULL, m_buffer, SCREEN_WIDTH  * sizeof(Uint32));
         SDL_RenderClear(m_renderer);
         SDL_RenderCopy(m_renderer, m_texture, NULL, NULL);
         SDL_RenderPresent(m_renderer);
@@ -77,6 +78,21 @@ namespace jvs {
             }
         }
         return true;
+    }
+    
+    void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue) {
+        
+        Uint32 color = 0;
+        
+        color += 0xFF;
+        color <<= 8;
+        color += red;
+        color <<= 8;
+        color += green;
+        color <<= 8;
+        color += blue;
+        
+        m_buffer[(y * SCREEN_WIDTH) + x] = color;
     }
     
     void Screen::close() {
