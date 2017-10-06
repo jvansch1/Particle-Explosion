@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E4013BD41F7C854900B14506 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4013BD21F7C854900B14506 /* Screen.cpp */; };
+		E40C522C1F870226007FFCC1 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40C522A1F870226007FFCC1 /* Particle.cpp */; };
+		E40C522F1F870241007FFCC1 /* Swarm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E40C522D1F870241007FFCC1 /* Swarm.cpp */; };
 		E48F2A7F1F505ED8004BF021 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E48F2A7E1F505ED8004BF021 /* main.cpp */; };
 		E48F2A871F505EFE004BF021 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48F2A861F505EFE004BF021 /* SDL2.framework */; };
 /* End PBXBuildFile section */
@@ -27,6 +29,10 @@
 /* Begin PBXFileReference section */
 		E4013BD21F7C854900B14506 /* Screen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Screen.cpp; path = ../Screen.cpp; sourceTree = "<group>"; };
 		E4013BD31F7C854900B14506 /* Screen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Screen.hpp; path = ../Screen.hpp; sourceTree = "<group>"; };
+		E40C522A1F870226007FFCC1 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
+		E40C522B1F870226007FFCC1 /* Particle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Particle.hpp; sourceTree = "<group>"; };
+		E40C522D1F870241007FFCC1 /* Swarm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Swarm.cpp; sourceTree = "<group>"; };
+		E40C522E1F870241007FFCC1 /* Swarm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Swarm.hpp; sourceTree = "<group>"; };
 		E48F2A7B1F505ED8004BF021 /* Particle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Particle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48F2A7E1F505ED8004BF021 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E48F2A861F505EFE004BF021 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -67,6 +73,10 @@
 				E4013BD21F7C854900B14506 /* Screen.cpp */,
 				E4013BD31F7C854900B14506 /* Screen.hpp */,
 				E48F2A7E1F505ED8004BF021 /* main.cpp */,
+				E40C522A1F870226007FFCC1 /* Particle.cpp */,
+				E40C522B1F870226007FFCC1 /* Particle.hpp */,
+				E40C522D1F870241007FFCC1 /* Swarm.cpp */,
+				E40C522E1F870241007FFCC1 /* Swarm.hpp */,
 			);
 			path = Particle;
 			sourceTree = "<group>";
@@ -128,7 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40C522F1F870241007FFCC1 /* Swarm.cpp in Sources */,
 				E48F2A7F1F505ED8004BF021 /* main.cpp in Sources */,
+				E40C522C1F870226007FFCC1 /* Particle.cpp in Sources */,
 				E4013BD41F7C854900B14506 /* Screen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
