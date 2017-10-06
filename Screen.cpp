@@ -84,13 +84,15 @@ namespace jvs {
         
         Uint32 color = 0;
         
-        color += 0xFF;
-        color <<= 8;
+
+
         color += red;
         color <<= 8;
         color += green;
         color <<= 8;
         color += blue;
+        color <<= 8;
+        color += 0xFF;
         
         m_buffer[(y * SCREEN_WIDTH) + x] = color;
     }
